@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Project</title>
+    <link rel="stylesheet" href="assest/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img id="logo" src="assest/icons/Group 11.png" alt="Logo" />
+        </div>
+        <nav>
+          <label for="toggle"><img src="assest/icons/list.webp" alt="menu" /></label>
+          <input type="checkbox" id="toggle" />
+          <ul>
+            <li>
+              <a href="index.html">
+                <hr />
+                MAIN
+                <hr />
+              </a>
+            </li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="certifications.html">CERTIFICATIONS</a></li>
+            <li><a href="Contact.html">CONTACTS</a></li>
+          </ul>
+        </nav>
+        <div class="dark-mood">
+          <img id="theme-icon" src="assest/icons/Moon.png" alt="Toggle Theme" onclick="toggleDarkMode()" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="title">
+          <div class="text">
+            <h1>PROJECT <br /><span>Lorum</span></h1>
+          </div>
+          <div class="image-container">
+            <div class="project-img">
+              <img id="project-image" src="assest/images/Rectangle 6.png" alt="Project" />
+              <a href="project.html" class="view-project">VIEW PROJECT</a>
+              <button class="arrow left" onclick="prevProject()"><img src="assest/icons/Frame 9.png" alt="Left" /></button>
+              <button class="arrow right" onclick="nextProject()"><img src="assest/icons/Frame 8.png" alt="Right" /></button>
+              <div class="project-index"><span id="current-index">01</span> / 02</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section About -->
+    <section class="about">
+      <div class="container">
+        <div class="about-images-wrapper">
+          <div class="about-small-images">
+            <img src="assest/images/Rectangle 8.png" alt="Small Image 1" />
+            <img src="assest/images/Rectangle 10.png" alt="Small Image 2" />
+          </div>
+          <div class="about-big-image">
+            <img src="assest/images/Rectangle 9.png" alt="Big Image" />
+          </div>
+        </div>
+
+        <div class="about-content">
+          <h2 class="h2">About</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          </p>
+          <a href="project.html" class="read-more-link">READ MORE →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Main Focus -->
+    <section class="main-focus">
+      <div class="container">
+        <h2>Main Focus/Mission Statement</h2>
+        <div class="focus-items">
+          <div class="focus-item">
+            <div class="focus-image">
+              <img src="assest/icons/1.png" alt="Focus 1" />
+            </div>
+            <div class="focus-text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, lectus et facilisis placerat.</p>
+            </div>
+          </div>
+
+          <div class="focus-item">
+            <div class="focus-image">
+              <img src="assest/icons/2.png" alt="Focus 2" />
+            </div>
+            <div class="focus-text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, lectus et facilisis placerat, magna mauris porttitor tortor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section our projects -->
+
+    <section class="our-projects">
+      <div class="container">
+        <h2>Our Projects</h2>
+
+        <div class="projects-row">
+          <div class="project project-featured">
+            <a href="project.html">
+              <img src="assest/images/Rectangle 12.png" alt="Sample Project" />
+              <div class="overlay">
+                <h3>Sample Project</h3>
+                <span class="btn-view">VIEW MORE</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="project">
+            <a href="project.html">
+              <img src="assest/images/image 15.png" alt="Golden Dome Project" />
+            </a>
+          </div>
+        </div>
+
+        <div class="projects-row second-row">
+          <div class="project">
+            <a href="project.html">
+              <img src="assest/images/image 16.png" alt="Project 1" />
+            </a>
+          </div>
+          <div class="project">
+            <a href="project.html">
+              <img src="assest/images/image 17.png" alt="Project 2" />
+            </a>
+          </div>
+          <div class="project project-last">
+            <a href="projects.html">
+              <img src="assest/images/image 18.png" alt="Project 3" />
+              <span class="btn-all-projects">ALL PROJECTS →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+          <form class="contact-form">
+            <input type="text" placeholder="Name" />
+            <input type="tel" placeholder="Phone Number*" required />
+            <input type="email" placeholder="E-mail*" required />
+            <input type="text" placeholder="Interested Product/Service" />
+            <textarea placeholder="Message*" required></textarea>
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>I agree to the privacy policy</span>
+            </label>
+            <button type="submit" class="submit-btn">SEND</button>
+          </form>
+
+          <div class="contact-image">
+            <img src="assest/images/image 12.png" alt="Contact Image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-logo">
+<a href="index.html">
+                          <img src="assest/icons/Group 11 1.png" alt="Logo" />
+
+            </a>          </div>
+
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="index.html">Main</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+              <li><a href="Contact.html">Contacts</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contacts</h4>
+            <ul>
+              <li>📍 1234 Sample Street, Austin Texas 78704</li>
+              <li>📞 512.333.2222</li>
+              <li>📧 sampleemail@gmail.com</li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4>Social Media</h4>
+            <div class="social-icons">
+              <a href="#"><img src="assest/icons/facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="assest/icons/twitter.png" alt="Twitter" /></a>
+              <a href="#"><img src="assest/icons/Linked In.png" alt="LinkedIn" /></a>
+              <a href="#"><img src="assest/icons/pininterest.png" alt="Pinterest" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="assest/scripts/script.js"></script>
+  </body>
+</html>
