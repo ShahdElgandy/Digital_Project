@@ -5,8 +5,10 @@ const imageElement = document.getElementById("project-image");
 const indexDisplay = document.getElementById("current-index");
 
 function updateImage() {
-  imageElement.src = images[currentIndex];
-  indexDisplay.textContent = currentIndex === 0 ? "01" : "02";
+  if (imageElement && indexDisplay) {
+    imageElement.src = images[currentIndex];
+    indexDisplay.textContent = currentIndex === 0 ? "01" : "02";
+  }
 }
 
 function nextProject() {
@@ -19,29 +21,37 @@ function prevProject() {
   updateImage();
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const icon = document.getElementById("theme-icon");
+    const logo = document.getElementById("logo");
+
+    if (icon) icon.src = "assest/icons/Rectangle 11.png";
+    if (logo) logo.src = "assest/icons/Group 11 1.png";
+  }
+
+  updateImage();
+});
+
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
+
   const icon = document.getElementById("theme-icon");
-  if (document.body.classList.contains("dark-mode")) {
-    icon.src = "assest/icons/Rectangle 11.png";
+  const logo = document.getElementById("logo");
+
+  const isDark = document.body.classList.contains("dark-mode");
+
+  if (isDark) {
+    if (icon) icon.src = "assest/icons/Rectangle 11.png";
+    if (logo) logo.src = "assest/icons/Group 11 1.png";
+    localStorage.setItem("theme", "dark");
   } else {
-    icon.src = "assest/icons/Moon.png";
+    if (icon) icon.src = "assest/icons/Moon.png";
+    if (logo) logo.src = "assest/icons/Group 11.png";
+    localStorage.setItem("theme", "light");
   }
 }
-
-
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  
-  const icon = document.getElementById("theme-icon");
-  const logo = document.getElementById("logo"); 
-  
-  if (document.body.classList.contains("dark-mode")) {
-    icon.src = "assest/icons/Rectangle 11.png";
-    logo.src = "assest/icons/Group 11 1.png";
-  } else {
-    icon.src = "assest/icons/Moon.png";
-    logo.src = "assest/icons/Group 11.png";
-  }
-}
-
